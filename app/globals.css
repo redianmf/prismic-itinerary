@@ -1,0 +1,6 @@
+@import "@fontsource/source-serif-pro";
+@import "@fontsource-variable/noto-sans";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,183 @@
+{
+  "id": "top_tour_summary",
+  "type": "SharedSlice",
+  "name": "TopTourSummary",
+  "description": "TopTourSummary",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "top_tour_image": {
+          "type": "Image",
+          "config": {
+            "label": "Top Tour Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "trip_year": {
+          "type": "StructuredText",
+          "config": {
+            "label": "trip year",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "year": {
+          "type": "Group",
+          "config": {
+            "label": "year",
+            "repeat": true,
+            "fields": {
+              "year_1": {
+                "type": "Text",
+                "config": {
+                  "label": "year 1",
+                  "placeholder": ""
+                }
+              },
+              "year_2": {
+                "type": "Text",
+                "config": {
+                  "label": "year 2",
+                  "placeholder": ""
+                }
+              },
+              "year_3": {
+                "type": "Text",
+                "config": {
+                  "label": "year 3",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "travel": {
+          "type": "StructuredText",
+          "config": {
+            "label": "travel",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "travel_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "travel content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "accomodation": {
+          "type": "StructuredText",
+          "config": {
+            "label": "accomodation",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "accomodation_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "accomodation content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "meals": {
+          "type": "StructuredText",
+          "config": {
+            "label": "meals",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "meals_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "meals content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "itinerary": {
+          "type": "StructuredText",
+          "config": {
+            "label": "itinerary",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "itinerary_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "itinerary content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cta_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "cta title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cta_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "cta content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "trip_code": {
+          "type": "StructuredText",
+          "config": {
+            "label": "trip code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

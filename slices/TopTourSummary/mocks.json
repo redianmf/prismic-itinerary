@@ -1,0 +1,221 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"top_tour_image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1526161202719-67a7615a3979?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxyb21lfGVufDB8fHx8MTcyNDI0MzI5OHww&ixlib=rb-4.0.3&q=85",
+				"alt": "a close up of a very old looking building",
+				"origin": {
+					"id": "eDb4qWCvUNM",
+					"url": "https://images.unsplash.com/photo-1526161202719-67a7615a3979?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxyb21lfGVufDB8fHx8MTcyNDI0MzI5OHww&ixlib=rb-4.0.3&q=85",
+					"width": 2304,
+					"height": 1536
+				},
+				"width": 2304,
+				"height": 1536,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"trip_year": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud officia consectetur sunt culpa ut veniam sint."
+						}
+					}
+				]
+			},
+			"year": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"year_1",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "nails",
+									"type": "Text"
+								}
+							],
+							[
+								"year_2",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "old",
+									"type": "Text"
+								}
+							],
+							[
+								"year_3",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "account",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi ut amet in mollit sunt excepteur esse consectetur Lorem ipsum laborum qui tempor esse. Magna laborum non adipisicing amet est sit sint proident laborum labore sit elit nulla laboris ullamco."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ad irure pariatur esse qui adipisicing quis ex magna."
+						}
+					}
+				]
+			},
+			"travel": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor enim culpa adipisicing ut. Irure id deserunt eiusmod deserunt laboris mollit est duis mollit mollit adipisicing. Voluptate ad excepteur non magna pariatur sit amet consectetur irure nostrud."
+						}
+					}
+				]
+			},
+			"travel_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id cupidatat laboris consectetur qui et aliquip do et aliquip tempor enim magna magna cillum. Proident officia cillum reprehenderit elit tempor aliquip commodo deserunt."
+						}
+					}
+				]
+			},
+			"accomodation": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore proident labore deserunt id nulla Lorem duis laborum quis anim laborum duis commodo aliquip cillum. Officia adipisicing incididunt tempor nulla nisi cupidatat occaecat. Eiusmod magna ut culpa culpa fugiat occaecat in."
+						}
+					}
+				]
+			},
+			"accomodation_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non id incididunt cupidatat laboris tempor deserunt ad."
+						}
+					}
+				]
+			},
+			"meals": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis laborum reprehenderit adipisicing duis aute nostrud veniam commodo exercitation. Irure est deserunt ut laborum commodo aute ipsum et magna consectetur non fugiat Lorem qui minim."
+						}
+					}
+				]
+			},
+			"meals_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do ad nulla veniam ut ad mollit dolor. Eiusmod et proident irure voluptate eu."
+						}
+					}
+				]
+			},
+			"itinerary": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing quis aute dolor culpa eu nisi et eiusmod et id."
+						}
+					}
+				]
+			},
+			"itinerary_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis proident do veniam nostrud mollit velit aute laborum labore quis do reprehenderit do officia."
+						}
+					}
+				]
+			},
+			"cta_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip laborum proident ea reprehenderit irure nisi."
+						}
+					}
+				]
+			},
+			"cta_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit esse sit cillum commodo velit sint veniam in ut esse velit consectetur culpa veniam."
+						}
+					}
+				]
+			},
+			"trip_code": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo do non nisi occaecat nostrud pariatur exercitation anim ad in et incididunt. Eiusmod sint culpa Lorem officia fugiat mollit aliquip magna tempor. Magna voluptate deserunt fugiat in ex nisi magna non sunt irure."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
