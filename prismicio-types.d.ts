@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ItineraryDocumentDataSlicesSlice =
+  | DayByDayItinerarySlice
   | TripMapSlice
   | BookingFeaturesSlice
   | TopTourSummarySlice;
@@ -147,6 +148,198 @@ type BookingFeaturesSliceVariation = BookingFeaturesSliceDefault;
 export type BookingFeaturesSlice = prismic.SharedSlice<
   "booking_features",
   BookingFeaturesSliceVariation
+>;
+
+/**
+ * Item in *DayByDayItinerary → Default → Primary → locations*
+ */
+export interface DayByDayItinerarySliceDefaultPrimaryLocationsItem {
+  /**
+   * image field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * day number field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].day_number
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  day_number: prismic.RichTextField;
+
+  /**
+   * day remarks field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].day_remarks
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  day_remarks: prismic.RichTextField;
+
+  /**
+   * title field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * event 1 field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].event_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  event_1: prismic.ImageField<never>;
+
+  /**
+   * event 1 title field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].event_1_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  event_1_title: prismic.KeyTextField;
+
+  /**
+   * event 2 field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].event_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  event_2: prismic.ImageField<never>;
+
+  /**
+   * event 2 title field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].event_2_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  event_2_title: prismic.KeyTextField;
+
+  /**
+   * accordion content field in *DayByDayItinerary → Default → Primary → locations*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].accordion_content
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  accordion_content: prismic.ContentRelationshipField;
+}
+
+/**
+ * Primary content in *DayByDayItinerary → Default → Primary*
+ */
+export interface DayByDayItinerarySliceDefaultPrimary {
+  /**
+   * title field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * expand field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.expand
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  expand: prismic.KeyTextField;
+
+  /**
+   * collapse field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.collapse
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  collapse: prismic.KeyTextField;
+
+  /**
+   * locations field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.locations[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  locations: prismic.GroupField<
+    Simplify<DayByDayItinerarySliceDefaultPrimaryLocationsItem>
+  >;
+}
+
+/**
+ * Default variation for DayByDayItinerary Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DayByDayItinerarySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DayByDayItinerarySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DayByDayItinerary*
+ */
+type DayByDayItinerarySliceVariation = DayByDayItinerarySliceDefault;
+
+/**
+ * DayByDayItinerary Shared Slice
+ *
+ * - **API ID**: `day_by_day_itinerary`
+ * - **Description**: DayByDayItinerary
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DayByDayItinerarySlice = prismic.SharedSlice<
+  "day_by_day_itinerary",
+  DayByDayItinerarySliceVariation
 >;
 
 /**
@@ -467,6 +660,11 @@ declare module "@prismicio/client" {
       BookingFeaturesSliceDefaultPrimary,
       BookingFeaturesSliceVariation,
       BookingFeaturesSliceDefault,
+      DayByDayItinerarySlice,
+      DayByDayItinerarySliceDefaultPrimaryLocationsItem,
+      DayByDayItinerarySliceDefaultPrimary,
+      DayByDayItinerarySliceVariation,
+      DayByDayItinerarySliceDefault,
       TopTourSummarySlice,
       TopTourSummarySliceDefaultPrimaryYearItem,
       TopTourSummarySliceDefaultPrimary,

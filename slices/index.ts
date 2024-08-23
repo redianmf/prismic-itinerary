@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   booking_features: dynamic(() => import("./BookingFeatures")),
+  day_by_day_itinerary: dynamic(() => import("./DayByDayItinerary")),
   top_tour_summary: dynamic(() => import("./TopTourSummary")),
   trip_map: dynamic(() => import("./TripMap")),
 };

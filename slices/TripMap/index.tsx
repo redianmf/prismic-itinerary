@@ -25,7 +25,7 @@ const TripMap = ({ slice }: TripMapProps): JSX.Element => {
         <div className="flex flex-col justify-center gap-2">
           {slice.primary.legend.map((item) => (
             <div key={item.label} className="flex items-center gap-3">
-              <PrismicNextImage field={item.icon} className="w-5" />
+              <PrismicNextImage alt="" field={item.icon} className="w-5" />
               <p className="text-secondary font-secondary font-bold">
                 {item.label}
               </p>

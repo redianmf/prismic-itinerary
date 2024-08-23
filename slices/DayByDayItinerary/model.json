@@ -1,0 +1,141 @@
+{
+  "id": "day_by_day_itinerary",
+  "type": "SharedSlice",
+  "name": "DayByDayItinerary",
+  "description": "DayByDayItinerary",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "expand": {
+          "type": "Text",
+          "config": {
+            "label": "expand",
+            "placeholder": ""
+          }
+        },
+        "collapse": {
+          "type": "Text",
+          "config": {
+            "label": "collapse",
+            "placeholder": ""
+          }
+        },
+        "locations": {
+          "type": "Group",
+          "config": {
+            "label": "locations",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "day_number": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "day number",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "day_remarks": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "day remarks",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "subtitle",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "event_1": {
+                "type": "Image",
+                "config": {
+                  "label": "event 1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "event_1_title": {
+                "type": "Text",
+                "config": {
+                  "label": "event 1 title",
+                  "placeholder": ""
+                }
+              },
+              "event_2": {
+                "type": "Image",
+                "config": {
+                  "label": "event 2",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "event_2_title": {
+                "type": "Text",
+                "config": {
+                  "label": "event 2 title",
+                  "placeholder": ""
+                }
+              },
+              "accordion_content": {
+                "type": "Link",
+                "config": {
+                  "label": "accordion content",
+                  "select": "document"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

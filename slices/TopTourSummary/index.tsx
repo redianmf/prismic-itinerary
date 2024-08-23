@@ -5,12 +5,12 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
+import { Button, ButtonGroup } from "@material-tailwind/react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
 /**
  * Props for `TopTourSummary`.
@@ -47,23 +47,16 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
             <div className="text-secondary font-secondary">
               <PrismicRichText field={slice.primary.trip_year} />
             </div>
-            <ToggleButtonGroup
-              value={activeYear}
-              exclusive
-              onChange={handleChangeActiveYear}
-              aria-label="trip year"
-              className="font-secondary font-bold py-0"
-            >
+            <ButtonGroup>
               {slice.primary.year.map((item) => (
-                <ToggleButton
+                <Button
                   key={item.year}
-                  value={item.year}
-                  className={`${item.year === activeYear ? "bg-primary text-white" : "bg"}`}
+                  className={`${item.year === activeYear ? "bg-primary text-white" : "bg-white text-primary"}`}
                 >
                   {item.year}
-                </ToggleButton>
+                </Button>
               ))}
-            </ToggleButtonGroup>
+            </ButtonGroup>
           </section>
           <div className="text-secondary font-primary text-3xl">
             <PrismicRichText field={slice.primary.title} />
