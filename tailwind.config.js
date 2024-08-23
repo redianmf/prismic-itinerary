@@ -15,6 +15,11 @@ module.exports = {
         primary: ['"Source Serif Pro"', "Times New Roman"],
         secondary: ['"Noto Sans Variable"', "Times New Roman"],
       },
+      colors: {
+        primary: "#2d5a7b",
+        secondary: "#414141",
+        tertiary: "#125a55",
+      },
     },
   },
   plugins: [],

@@ -35,24 +35,10 @@
             "label": "year",
             "repeat": true,
             "fields": {
-              "year_1": {
+              "year": {
                 "type": "Text",
                 "config": {
-                  "label": "year 1",
-                  "placeholder": ""
-                }
-              },
-              "year_2": {
-                "type": "Text",
-                "config": {
-                  "label": "year 2",
-                  "placeholder": ""
-                }
-              },
-              "year_3": {
-                "type": "Text",
-                "config": {
-                  "label": "year 3",
+                  "label": "year",
                   "placeholder": ""
                 }
               }

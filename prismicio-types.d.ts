@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ItineraryDocumentDataSlicesSlice = TopTourSummarySlice;
+type ItineraryDocumentDataSlicesSlice =
+  | TripMapSlice
+  | BookingFeaturesSlice
+  | TopTourSummarySlice;
 
 /**
  * Content for itinerary documents
@@ -72,38 +75,93 @@ export type ItineraryDocument<Lang extends string = string> =
 export type AllDocumentTypes = ItineraryDocument;
 
 /**
+ * Primary content in *BookingFeatures → Default → Primary*
+ */
+export interface BookingFeaturesSliceDefaultPrimary {
+  /**
+   * feature 1 field in *BookingFeatures → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: booking_features.default.primary.feature_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_1: prismic.RichTextField;
+
+  /**
+   * feature 2 field in *BookingFeatures → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: booking_features.default.primary.feature_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_2: prismic.RichTextField;
+
+  /**
+   * feature 3 field in *BookingFeatures → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: booking_features.default.primary.feature_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_3: prismic.RichTextField;
+
+  /**
+   * additional information field in *BookingFeatures → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: booking_features.default.primary.additional_information
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  additional_information: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BookingFeatures Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BookingFeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BookingFeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BookingFeatures*
+ */
+type BookingFeaturesSliceVariation = BookingFeaturesSliceDefault;
+
+/**
+ * BookingFeatures Shared Slice
+ *
+ * - **API ID**: `booking_features`
+ * - **Description**: BookingFeatures
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BookingFeaturesSlice = prismic.SharedSlice<
+  "booking_features",
+  BookingFeaturesSliceVariation
+>;
+
+/**
  * Item in *TopTourSummary → Default → Primary → year*
  */
 export interface TopTourSummarySliceDefaultPrimaryYearItem {
   /**
-   * year 1 field in *TopTourSummary → Default → Primary → year*
+   * year field in *TopTourSummary → Default → Primary → year*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: top_tour_summary.default.primary.year[].year_1
+   * - **API ID Path**: top_tour_summary.default.primary.year[].year
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  year_1: prismic.KeyTextField;
-
-  /**
-   * year 2 field in *TopTourSummary → Default → Primary → year*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: top_tour_summary.default.primary.year[].year_2
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  year_2: prismic.KeyTextField;
-
-  /**
-   * year 3 field in *TopTourSummary → Default → Primary → year*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: top_tour_summary.default.primary.year[].year_3
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  year_3: prismic.KeyTextField;
+  year: prismic.KeyTextField;
 }
 
 /**
@@ -301,6 +359,96 @@ export type TopTourSummarySlice = prismic.SharedSlice<
   TopTourSummarySliceVariation
 >;
 
+/**
+ * Item in *TripMap → Default → Primary → legend*
+ */
+export interface TripMapSliceDefaultPrimaryLegendItem {
+  /**
+   * icon field in *TripMap → Default → Primary → legend*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_map.default.primary.legend[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * label field in *TripMap → Default → Primary → legend*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_map.default.primary.legend[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *TripMap → Default → Primary*
+ */
+export interface TripMapSliceDefaultPrimary {
+  /**
+   * title field in *TripMap → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_map.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * map field in *TripMap → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_map.default.primary.map
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  map: prismic.ImageField<never>;
+
+  /**
+   * legend field in *TripMap → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_map.default.primary.legend[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  legend: prismic.GroupField<Simplify<TripMapSliceDefaultPrimaryLegendItem>>;
+}
+
+/**
+ * Default variation for TripMap Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TripMapSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TripMapSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TripMap*
+ */
+type TripMapSliceVariation = TripMapSliceDefault;
+
+/**
+ * TripMap Shared Slice
+ *
+ * - **API ID**: `trip_map`
+ * - **Description**: TripMap
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TripMapSlice = prismic.SharedSlice<
+  "trip_map",
+  TripMapSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -315,11 +463,20 @@ declare module "@prismicio/client" {
       ItineraryDocumentData,
       ItineraryDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BookingFeaturesSlice,
+      BookingFeaturesSliceDefaultPrimary,
+      BookingFeaturesSliceVariation,
+      BookingFeaturesSliceDefault,
       TopTourSummarySlice,
       TopTourSummarySliceDefaultPrimaryYearItem,
       TopTourSummarySliceDefaultPrimary,
       TopTourSummarySliceVariation,
       TopTourSummarySliceDefault,
+      TripMapSlice,
+      TripMapSliceDefaultPrimaryLegendItem,
+      TripMapSliceDefaultPrimary,
+      TripMapSliceVariation,
+      TripMapSliceDefault,
     };
   }
 }

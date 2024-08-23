@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "trip_map": {
+              "type": "SharedSlice"
+            },
+            "booking_features": {
+              "type": "SharedSlice"
+            },
             "top_tour_summary": {
               "type": "SharedSlice"
             }

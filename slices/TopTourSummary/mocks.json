@@ -45,26 +45,10 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"year_1",
+								"year",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "nails",
-									"type": "Text"
-								}
-							],
-							[
-								"year_2",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "old",
-									"type": "Text"
-								}
-							],
-							[
-								"year_3",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "account",
+									"value": "noun",
 									"type": "Text"
 								}
 							]
