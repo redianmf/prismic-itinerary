@@ -81,8 +81,6 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
     }
   };
 
-  console.log(accordionData, "accord");
-
   useEffect(() => {
     getAccordionData();
   }, []);
@@ -166,7 +164,7 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
                       </div>
                     </div>
                   </div>
-                  <button
+                  <div
                     onClick={toggleExpandPlaceAll}
                     className="flex items-center font-secondary font-bold text-secondary"
                   >
@@ -174,7 +172,7 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
                       {expand[idx] ? "See Less" : "See More"}
                     </p>
                     {expand[idx] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                  </button>
+                  </div>
                 </section>
               </AccordionHeader>
               <AccordionBody className="border rounded-b-lg">

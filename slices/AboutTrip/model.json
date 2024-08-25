@@ -1,0 +1,77 @@
+{
+  "id": "about_trip",
+  "type": "SharedSlice",
+  "name": "AboutTrip",
+  "description": "AboutTrip",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "subtitle",
+            "placeholder": ""
+          }
+        },
+        "additional_information": {
+          "type": "Text",
+          "config": {
+            "label": "additional information",
+            "placeholder": ""
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "details": {
+          "type": "Group",
+          "config": {
+            "label": "details",
+            "repeat": true,
+            "fields": {
+              "detail": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "detail",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "type": {
+          "type": "Select",
+          "config": {
+            "label": "type",
+            "placeholder": "",
+            "options": [
+              "sightseeing",
+              "travel"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -21,6 +21,8 @@ module.exports = withMT({
         primary: "#2d5a7b",
         secondary: "#414141",
         tertiary: "#125a55",
+        quartenary: "#4b6b35",
+        quinary: "#a7282e",
       },
       transitionProperty: {
         width: "width",

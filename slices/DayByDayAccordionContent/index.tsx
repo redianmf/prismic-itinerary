@@ -13,7 +13,6 @@ export type DayByDayAccordionContentProps =
 const DayByDayAccordionContent = ({
   slice,
 }: DayByDayAccordionContentProps): JSX.Element => {
-  // console.log(slice.primary, "slice content");
   return (
     <section
       data-slice-type={slice.slice_type}

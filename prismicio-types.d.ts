@@ -39,6 +39,7 @@ export type DayByDayAccordionDocument<Lang extends string = string> =
   >;
 
 type ItineraryDocumentDataSlicesSlice =
+  | AboutTripSlice
   | DayByDayAccordionContentSlice
   | DayByDayItinerarySlice
   | TripMapSlice
@@ -109,6 +110,118 @@ export type ItineraryDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = DayByDayAccordionDocument | ItineraryDocument;
+
+/**
+ * Item in *AboutTrip → Default → Primary → details*
+ */
+export interface AboutTripSliceDefaultPrimaryDetailsItem {
+  /**
+   * detail field in *AboutTrip → Default → Primary → details*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.details[].detail
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  detail: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *AboutTrip → Default → Primary*
+ */
+export interface AboutTripSliceDefaultPrimary {
+  /**
+   * title field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * subtitle field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * additional information field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.additional_information
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  additional_information: prismic.KeyTextField;
+
+  /**
+   * icon field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * details field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.details[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  details: prismic.GroupField<
+    Simplify<AboutTripSliceDefaultPrimaryDetailsItem>
+  >;
+
+  /**
+   * type field in *AboutTrip → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_trip.default.primary.type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<"sightseeing" | "travel">;
+}
+
+/**
+ * Default variation for AboutTrip Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutTripSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutTripSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutTrip*
+ */
+type AboutTripSliceVariation = AboutTripSliceDefault;
+
+/**
+ * AboutTrip Shared Slice
+ *
+ * - **API ID**: `about_trip`
+ * - **Description**: AboutTrip
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutTripSlice = prismic.SharedSlice<
+  "about_trip",
+  AboutTripSliceVariation
+>;
 
 /**
  * Primary content in *BookingFeatures → Default → Primary*
@@ -896,6 +1009,11 @@ declare module "@prismicio/client" {
       ItineraryDocumentData,
       ItineraryDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AboutTripSlice,
+      AboutTripSliceDefaultPrimaryDetailsItem,
+      AboutTripSliceDefaultPrimary,
+      AboutTripSliceVariation,
+      AboutTripSliceDefault,
       BookingFeaturesSlice,
       BookingFeaturesSliceDefaultPrimary,
       BookingFeaturesSliceVariation,
