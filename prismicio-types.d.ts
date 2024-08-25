@@ -39,6 +39,7 @@ export type DayByDayAccordionDocument<Lang extends string = string> =
   >;
 
 type ItineraryDocumentDataSlicesSlice =
+  | FaqSlice
   | AboutTripSlice
   | DayByDayAccordionContentSlice
   | DayByDayItinerarySlice
@@ -693,6 +694,103 @@ export type DayByDayItinerarySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Faq → Default → Primary → qna*
+ */
+export interface FaqSliceDefaultPrimaryQnaItem {
+  /**
+   * question field in *Faq → Default → Primary → qna*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.qna[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * answer field in *Faq → Default → Primary → qna*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.qna[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * title field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * expand field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.expand
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  expand: prismic.KeyTextField;
+
+  /**
+   * collapse field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.collapse
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  collapse: prismic.KeyTextField;
+
+  /**
+   * qna field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.qna[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  qna: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryQnaItem>>;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
+
+/**
  * Item in *TopTourSummary → Default → Primary → year*
  */
 export interface TopTourSummarySliceDefaultPrimaryYearItem {
@@ -1029,6 +1127,11 @@ declare module "@prismicio/client" {
       DayByDayItinerarySliceDefaultPrimary,
       DayByDayItinerarySliceVariation,
       DayByDayItinerarySliceDefault,
+      FaqSlice,
+      FaqSliceDefaultPrimaryQnaItem,
+      FaqSliceDefaultPrimary,
+      FaqSliceVariation,
+      FaqSliceDefault,
       TopTourSummarySlice,
       TopTourSummarySliceDefaultPrimaryYearItem,
       TopTourSummarySliceDefaultPrimary,

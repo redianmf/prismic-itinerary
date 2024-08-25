@@ -9,6 +9,7 @@ export const components = {
     () => import("./DayByDayAccordionContent"),
   ),
   day_by_day_itinerary: dynamic(() => import("./DayByDayItinerary")),
+  faq: dynamic(() => import("./Faq")),
   top_tour_summary: dynamic(() => import("./TopTourSummary")),
   trip_map: dynamic(() => import("./TripMap")),
 };

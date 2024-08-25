@@ -1,0 +1,56 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "mistake",
+				"type": "Text"
+			},
+			"expand": {
+				"__TYPE__": "FieldContent",
+				"value": "doll",
+				"type": "Text"
+			},
+			"collapse": {
+				"__TYPE__": "FieldContent",
+				"value": "or",
+				"type": "Text"
+			},
+			"qna": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "greatly",
+									"type": "Text"
+								}
+							],
+							[
+								"answer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In ea ut magna reprehenderit non incididunt ullamco labore Lorem dolore ullamco labore quis."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
