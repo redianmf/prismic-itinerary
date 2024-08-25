@@ -22,6 +22,9 @@ module.exports = withMT({
         secondary: "#414141",
         tertiary: "#125a55",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   plugins: [],

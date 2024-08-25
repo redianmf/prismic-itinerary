@@ -21,7 +21,11 @@ const TripMap = ({ slice }: TripMapProps): JSX.Element => {
         <PrismicRichText field={slice.primary.title} />
       </div>
       <section className="mt-3 grid grid-cols-3">
-        <PrismicNextImage field={slice.primary.map} className="col-span-2" />
+        <PrismicNextImage
+          alt=""
+          field={slice.primary.map}
+          className="col-span-2"
+        />
         <div className="flex flex-col justify-center gap-2">
           {slice.primary.legend.map((item) => (
             <div key={item.label} className="flex items-center gap-3">

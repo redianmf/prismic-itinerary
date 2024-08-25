@@ -1,0 +1,128 @@
+{
+  "id": "day_by_day_accordion_content",
+  "type": "SharedSlice",
+  "name": "DayByDayAccordionContent",
+  "description": "DayByDayAccordionContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "day_number": {
+          "type": "Text",
+          "config": {
+            "label": "day number",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": ""
+          }
+        },
+        "additional_information": {
+          "type": "Group",
+          "config": {
+            "label": "additional information",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "included_and_optional_exp": {
+          "type": "Text",
+          "config": {
+            "label": "included and optional exp",
+            "placeholder": ""
+          }
+        },
+        "experience_card": {
+          "type": "Group",
+          "config": {
+            "label": "experience card",
+            "repeat": true,
+            "fields": {
+              "exp_image": {
+                "type": "Image",
+                "config": {
+                  "label": "exp image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "remark": {
+                "type": "Select",
+                "config": {
+                  "label": "remark",
+                  "placeholder": "remarks for image",
+                  "options": [
+                    "iconic",
+                    "optional"
+                  ],
+                  "default_value": "iconic"
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "description",
+                  "placeholder": ""
+                }
+              },
+              "status": {
+                "type": "Select",
+                "config": {
+                  "label": "status",
+                  "placeholder": "",
+                  "options": [
+                    "included",
+                    "paid"
+                  ],
+                  "default_value": "included"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

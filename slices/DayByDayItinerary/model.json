@@ -30,6 +30,20 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
+        "download": {
+          "type": "Text",
+          "config": {
+            "label": "download",
+            "placeholder": ""
+          }
+        },
+        "print": {
+          "type": "Text",
+          "config": {
+            "label": "print",
+            "placeholder": ""
+          }
+        },
         "expand": {
           "type": "Text",
           "config": {
@@ -128,7 +142,10 @@
                 "type": "Link",
                 "config": {
                   "label": "accordion content",
-                  "select": "document"
+                  "select": "document",
+                  "customtypes": [
+                    "day_by_day_accordion"
+                  ]
                 }
               }
             }

@@ -4,7 +4,42 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type DayByDayAccordionDocumentDataSlicesSlice = DayByDayAccordionContentSlice;
+
+/**
+ * Content for day by day accordion documents
+ */
+interface DayByDayAccordionDocumentData {
+  /**
+   * Slice Zone field in *day by day accordion*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DayByDayAccordionDocumentDataSlicesSlice>;
+}
+
+/**
+ * day by day accordion document from Prismic
+ *
+ * - **API ID**: `day_by_day_accordion`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DayByDayAccordionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<DayByDayAccordionDocumentData>,
+    "day_by_day_accordion",
+    Lang
+  >;
+
 type ItineraryDocumentDataSlicesSlice =
+  | DayByDayAccordionContentSlice
   | DayByDayItinerarySlice
   | TripMapSlice
   | BookingFeaturesSlice
@@ -73,7 +108,7 @@ export type ItineraryDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = ItineraryDocument;
+export type AllDocumentTypes = DayByDayAccordionDocument | ItineraryDocument;
 
 /**
  * Primary content in *BookingFeatures → Default → Primary*
@@ -148,6 +183,188 @@ type BookingFeaturesSliceVariation = BookingFeaturesSliceDefault;
 export type BookingFeaturesSlice = prismic.SharedSlice<
   "booking_features",
   BookingFeaturesSliceVariation
+>;
+
+/**
+ * Item in *DayByDayAccordionContent → Default → Primary → additional information*
+ */
+export interface DayByDayAccordionContentSliceDefaultPrimaryAdditionalInformationItem {
+  /**
+   * icon field in *DayByDayAccordionContent → Default → Primary → additional information*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.additional_information[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * description field in *DayByDayAccordionContent → Default → Primary → additional information*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.additional_information[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Item in *DayByDayAccordionContent → Default → Primary → experience card*
+ */
+export interface DayByDayAccordionContentSliceDefaultPrimaryExperienceCardItem {
+  /**
+   * exp image field in *DayByDayAccordionContent → Default → Primary → experience card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].exp_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  exp_image: prismic.ImageField<never>;
+
+  /**
+   * remark field in *DayByDayAccordionContent → Default → Primary → experience card*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: remarks for image
+   * - **Default Value**: iconic
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].remark
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  remark: prismic.SelectField<"iconic" | "optional", "filled">;
+
+  /**
+   * title field in *DayByDayAccordionContent → Default → Primary → experience card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * description field in *DayByDayAccordionContent → Default → Primary → experience card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * status field in *DayByDayAccordionContent → Default → Primary → experience card*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: included
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].status
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  status: prismic.SelectField<"included" | "paid", "filled">;
+}
+
+/**
+ * Primary content in *DayByDayAccordionContent → Default → Primary*
+ */
+export interface DayByDayAccordionContentSliceDefaultPrimary {
+  /**
+   * day number field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.day_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  day_number: prismic.KeyTextField;
+
+  /**
+   * title field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * description field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * additional information field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.additional_information[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  additional_information: prismic.GroupField<
+    Simplify<DayByDayAccordionContentSliceDefaultPrimaryAdditionalInformationItem>
+  >;
+
+  /**
+   * included and optional exp field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.included_and_optional_exp
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  included_and_optional_exp: prismic.KeyTextField;
+
+  /**
+   * experience card field in *DayByDayAccordionContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  experience_card: prismic.GroupField<
+    Simplify<DayByDayAccordionContentSliceDefaultPrimaryExperienceCardItem>
+  >;
+}
+
+/**
+ * Default variation for DayByDayAccordionContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DayByDayAccordionContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DayByDayAccordionContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DayByDayAccordionContent*
+ */
+type DayByDayAccordionContentSliceVariation =
+  DayByDayAccordionContentSliceDefault;
+
+/**
+ * DayByDayAccordionContent Shared Slice
+ *
+ * - **API ID**: `day_by_day_accordion_content`
+ * - **Description**: DayByDayAccordionContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DayByDayAccordionContentSlice = prismic.SharedSlice<
+  "day_by_day_accordion_content",
+  DayByDayAccordionContentSliceVariation
 >;
 
 /**
@@ -252,7 +469,7 @@ export interface DayByDayItinerarySliceDefaultPrimaryLocationsItem {
    * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].accordion_content
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  accordion_content: prismic.ContentRelationshipField;
+  accordion_content: prismic.ContentRelationshipField<"day_by_day_accordion">;
 }
 
 /**
@@ -278,6 +495,26 @@ export interface DayByDayItinerarySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subtitle: prismic.RichTextField;
+
+  /**
+   * download field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.download
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  download: prismic.KeyTextField;
+
+  /**
+   * print field in *DayByDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: day_by_day_itinerary.default.primary.print
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  print: prismic.KeyTextField;
 
   /**
    * expand field in *DayByDayItinerary → Default → Primary*
@@ -652,6 +889,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      DayByDayAccordionDocument,
+      DayByDayAccordionDocumentData,
+      DayByDayAccordionDocumentDataSlicesSlice,
       ItineraryDocument,
       ItineraryDocumentData,
       ItineraryDocumentDataSlicesSlice,
@@ -660,6 +900,12 @@ declare module "@prismicio/client" {
       BookingFeaturesSliceDefaultPrimary,
       BookingFeaturesSliceVariation,
       BookingFeaturesSliceDefault,
+      DayByDayAccordionContentSlice,
+      DayByDayAccordionContentSliceDefaultPrimaryAdditionalInformationItem,
+      DayByDayAccordionContentSliceDefaultPrimaryExperienceCardItem,
+      DayByDayAccordionContentSliceDefaultPrimary,
+      DayByDayAccordionContentSliceVariation,
+      DayByDayAccordionContentSliceDefault,
       DayByDayItinerarySlice,
       DayByDayItinerarySliceDefaultPrimaryLocationsItem,
       DayByDayItinerarySliceDefaultPrimary,

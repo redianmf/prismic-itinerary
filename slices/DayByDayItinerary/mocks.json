@@ -204,6 +204,16 @@
 						]
 					}
 				]
+			},
+			"download": {
+				"__TYPE__": "FieldContent",
+				"value": "wooden",
+				"type": "Text"
+			},
+			"print": {
+				"__TYPE__": "FieldContent",
+				"value": "this",
+				"type": "Text"
 			}
 		},
 		"items": []
