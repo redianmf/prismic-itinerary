@@ -18,6 +18,27 @@ import HelpIcon from "@mui/icons-material/Help";
 import PrintIcon from "@mui/icons-material/Print";
 import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
+
 /**
  * Props for `DayByDayItinerary`.
  */
@@ -48,6 +69,8 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
     setExpand(expandState);
   };
 
+  console.log(accordionData, "accord");
+
   const toggleExpandPlace = (idx: number) => {
     const _expand = [...expand];
     _expand[idx] = !expand[idx];
@@ -71,13 +94,33 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
       case "paid":
         return (
           <div className="flex justify-between items-center font-bold">
-            <p>Included With Trip</p>
+            <p>Additional cost applies</p>
             <HelpIcon />
           </div>
         );
 
       default:
         return <div>waiting for confirmation</div>;
+    }
+  };
+
+  const getExpRemarks = (remark: string) => {
+    switch (remark) {
+      case "iconic":
+        return (
+          <p className="py-1 px-2 rounded bg-purple-700 text-white font-secondary font-bold">
+            Iconic Experience
+          </p>
+        );
+      case "optional":
+        return (
+          <p className="py-1 px-2 rounded bg-white text-secondary font-secondary font-bold">
+            Optional Experience
+          </p>
+        );
+
+      default:
+        break;
     }
   };
 
@@ -218,32 +261,49 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
                     <p className="text-secondary font-primary text-2xl font-bold my-3">
                       {accordionData?.[idx]?.included_and_optional_exp}
                     </p>
-                    <section className="grid grid-cols-3 gap-7">
-                      {accordionData?.[idx]?.experience_card?.map(
-                        (exp, expIdx) => (
-                          <div key={expIdx} className="border rounded-xl">
-                            <div className="flex flex-col h-full">
-                              <PrismicNextImage
-                                field={exp.exp_image}
-                                alt=""
-                                className="w-full rounded-t-xl"
-                              />
-                              <div className="p-3 grow flex flex-col justify-between">
-                                <div className="mb-2">
-                                  <p className="text-secondary font-primary font-bold text-lg">
-                                    {exp?.title}
-                                  </p>
-                                  <p className="text-secondary font-secondary font-normal">
-                                    {exp?.description}
-                                  </p>
+                    {accordionData?.[idx]?.experience_card?.length && (
+                      <section className="grid grid-cols-1">
+                        <Carousel
+                          swipeable={true}
+                          draggable={true}
+                          responsive={responsive}
+                          renderButtonGroupOutside={true}
+                        >
+                          {accordionData?.[idx]?.experience_card?.map(
+                            (exp, expIdx) => (
+                              <div
+                                key={expIdx}
+                                className="border rounded-xl mx-3 h-full"
+                              >
+                                <div className="flex flex-col h-full">
+                                  <div className="relative">
+                                    <PrismicNextImage
+                                      field={exp.exp_image}
+                                      alt=""
+                                      className="w-full rounded-t-xl"
+                                    />
+                                    <div className="absolute top-2 left-2">
+                                      {getExpRemarks(exp.remark)}
+                                    </div>
+                                  </div>
+                                  <div className="p-3 grow flex flex-col justify-between">
+                                    <div className="mb-2">
+                                      <p className="text-secondary font-primary font-bold text-lg">
+                                        {exp?.title}
+                                      </p>
+                                      <p className="text-secondary font-secondary font-normal">
+                                        {exp?.description}
+                                      </p>
+                                    </div>
+                                    {getExpStatus(exp?.status)}
+                                  </div>
                                 </div>
-                                {getExpStatus(exp?.status)}
                               </div>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </section>
+                            )
+                          )}
+                        </Carousel>
+                      </section>
+                    )}
                   </div>
                 </div>
               </AccordionBody>
