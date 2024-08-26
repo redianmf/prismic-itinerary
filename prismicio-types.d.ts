@@ -347,7 +347,10 @@ export interface DayByDayAccordionContentSliceDefaultPrimaryExperienceCardItem {
    * - **API ID Path**: day_by_day_accordion_content.default.primary.experience_card[].remark
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  remark: prismic.SelectField<"iconic" | "optional", "filled">;
+  remark: prismic.SelectField<
+    "iconic" | "optional" | "trafalgar" | "travel-matter",
+    "filled"
+  >;
 
   /**
    * title field in *DayByDayAccordionContent → Default → Primary → experience card*
@@ -508,12 +511,12 @@ export interface DayByDayItinerarySliceDefaultPrimaryLocationsItem {
   /**
    * day remarks field in *DayByDayItinerary → Default → Primary → locations*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
    * - **API ID Path**: day_by_day_itinerary.default.primary.locations[].day_remarks
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  day_remarks: prismic.RichTextField;
+  day_remarks: prismic.SelectField<"trafalgar" | "travel-matter">;
 
   /**
    * title field in *DayByDayItinerary → Default → Primary → locations*

@@ -69,8 +69,6 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
     setExpand(expandState);
   };
 
-  console.log(accordionData, "accord");
-
   const toggleExpandPlace = (idx: number) => {
     const _expand = [...expand];
     _expand[idx] = !expand[idx];
@@ -80,6 +78,27 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
   const toggleExpandPlaceAll = () => {
     const _expand = expand.map((item) => (item = !isExpandedAll));
     setExpand(_expand);
+  };
+
+  const getDayRemarks = (remark: any) => {
+    switch (remark) {
+      case "trafalgar":
+        return (
+          <p className="px-2 py-1 rounded bg-brown-600 text-white font-secondary font-bold">
+            Trafalgar Difference
+          </p>
+        );
+
+      case "travel-matter":
+        return (
+          <p className="px-2 py-1 rounded bg-purple-700 text-white font-secondary font-bold">
+            MAKE TRAVEL MATTER&reg;
+          </p>
+        );
+
+      default:
+        return <></>;
+    }
   };
 
   const getExpStatus = (status: string) => {
@@ -116,6 +135,18 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
         return (
           <p className="py-1 px-2 rounded bg-white text-secondary font-secondary font-bold">
             Optional Experience
+          </p>
+        );
+      case "trafalgar":
+        return (
+          <p className="py-1 px-2 rounded bg-brown-600 text-white font-secondary font-bold">
+            Trafalgar Difference
+          </p>
+        );
+      case "travel-matter":
+        return (
+          <p className="py-1 px-2 rounded bg-purple-700 text-white font-secondary font-bold">
+            MAKE TRAVEL MATTER&reg;
           </p>
         );
 
@@ -181,9 +212,9 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
                       className={`rounded-s-lg ${expand[idx] ? "w-0 opacity-0" : "w-[200px] opacity-100"} transition-all duration-500 ease-in-out`}
                     />
                     <div className="flex flex-col gap-2 py-3">
-                      <div className="flex gap-2 font-secondary text-secondary text-sm">
+                      <div className="flex gap-2 items-center font-secondary text-secondary text-sm">
                         <PrismicRichText field={item.day_number} />
-                        <PrismicRichText field={item.day_remarks} />
+                        {getDayRemarks(item.day_remarks)}
                       </div>
                       <div className="flex gap-2 items-baseline font-primary text-secondary text-lg">
                         <PrismicRichText field={item.title} />
@@ -243,7 +274,9 @@ const DayByDayItinerary = ({ slice, context }: DayByDayProps): JSX.Element => {
                                 field={info.icon}
                                 alt=""
                               />
-                              <PrismicRichText field={info.description} />
+                              <div>
+                                <PrismicRichText field={info.description} />
+                              </div>
                             </div>
                           )
                         )}

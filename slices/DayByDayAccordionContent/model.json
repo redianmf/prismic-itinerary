@@ -87,7 +87,9 @@
                   "placeholder": "remarks for image",
                   "options": [
                     "iconic",
-                    "optional"
+                    "optional",
+                    "trafalgar",
+                    "travel-matter"
                   ],
                   "default_value": "iconic"
                 }

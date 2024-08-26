@@ -96,20 +96,6 @@
 								}
 							],
 							[
-								"day_remarks",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Culpa veniam fugiat laboris nisi voluptate id elit cillum voluptate adipisicing id ex cupidatat. Et laborum ullamco fugiat deserunt. Non consequat nisi cupidatat occaecat esse aute ipsum qui."
-											}
-										}
-									]
-								}
-							],
-							[
 								"subtitle",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -199,6 +185,14 @@
 										"__TYPE__": "DocumentLink",
 										"id": "mock_document_id"
 									}
+								}
+							],
+							[
+								"day_remarks",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "trafalgar",
+									"type": "Select"
 								}
 							]
 						]
